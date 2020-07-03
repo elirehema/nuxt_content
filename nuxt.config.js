@@ -6,6 +6,10 @@ export default {
    ** See https://nuxtjs.org/api/configuration-mode
    */
   mode: "universal",
+  router: {
+    base: process.env.NODE_ENV === "production" ? "/nuxt_content/" : "/",
+    routerNameSplitter: "/",
+  },
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
