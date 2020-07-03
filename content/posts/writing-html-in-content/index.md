@@ -4,7 +4,7 @@ description: You can write HTML in your Markdown since the next page has been al
 date: 2020-10-10
 image: index.png
 author: 
-    name: Benjamin
+    name: Elirehema Paul
     bio: All about Benjamin
     image: https://answersafrica.com/wp-content/uploads/2015/01/somalia.jpg
 tags:
