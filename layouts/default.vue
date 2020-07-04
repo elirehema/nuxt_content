@@ -1,6 +1,6 @@
 <template>
   <v-app class="app" dark>
-    <v-app-bar :clipped-left="clipped" color="white " absolute dark dense app>
+    <v-app-bar color="white" absolute hide-on-scroll dark app>
       <v-toolbar-title to="/">
         <img src="@/assets/img/logo.png" height="100" width="200" alt="Opus" />
       </v-toolbar-title>
