@@ -8,8 +8,8 @@
       <v-spacer />
     </v-app-bar>
     <v-main>
-      <v-container>
-        <nuxt />
+      <v-container fluid>
+        <nuxt class="ma-0 pa-0" />
       </v-container>
     </v-main>
   </v-app>
