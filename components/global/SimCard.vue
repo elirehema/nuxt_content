@@ -3,7 +3,8 @@
     <v-img :src="post.image" class="img" alt="Cat"></v-img>
     <div class="content">
       <v-tags :tags="post.tags" />
-      <h3 class="heading">{{ post.title }}</h3>
+      <h3 class="heading">{{ post.title.slice(0, 40) }}</h3>
+      <v-divider></v-divider>
       <p>{{ post.description.slice(0, 200) }}</p>
 
       <nuxt-link :to="post.dir">Read more</nuxt-link>

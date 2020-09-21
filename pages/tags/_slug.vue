@@ -1,8 +1,10 @@
 <template>
-  <div class="posts">
-    <h1>Tags: {{ $route.params.slug }}</h1>
-    <PostCard v-for="post in posts" :key="post.dir" :post="post" />
-  </div>
+  <v-container class="ma-2">
+    <div class="posts">
+      <h1>Tags: {{ $route.params.slug }}</h1>
+      <PostCard v-for="post in posts" :key="post.dir" :post="post" />
+    </div>
+  </v-container>
 </template>
 <script>
 export default {
