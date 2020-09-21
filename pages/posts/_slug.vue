@@ -1,14 +1,17 @@
 <template>
-  <div class="post">
-    <h1>{{ post.title }}</h1>
-    <p class="lead">{{ post.description }}</p>
-    <p class="lead">{{ formatDate(post.createdAt) }}</p>
-    <v-tags :tags="post.tags" />
-    <v-img :src="post.image" class="img" alt="Featured image"></v-img>
-    <nuxt-content :document="post" />
-    <author :author="post.author" />
-    <prev-next :prev="prev" :next="next" />
-  </div>
+  <v-container class="ma-2">
+    <div class="post">
+      <h1>{{ post.title }}</h1>
+      <hr />
+      <p class="lead">{{ post.description }}</p>
+      <p class="lead">{{ formatDate(post.createdAt) }}</p>
+      <v-tags :tags="post.tags" />
+      <v-img :src="post.image" class="img" alt="Featured image"></v-img>
+      <nuxt-content :document="post" />
+      <author :author="post.author" />
+      <prev-next :prev="prev" :next="next" />
+    </div>
+  </v-container>
 </template>
 <script>
 import VImg from "~/components/VImg";

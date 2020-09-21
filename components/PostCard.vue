@@ -3,15 +3,15 @@
     <v-img :src="post.image" class="img" alt="Cat"></v-img>
     <div class="content">
       <v-tags :tags="post.tags" />
-      <h3 class="heading">{{ post.title }}</h3>
-      <p>{{ post.description.slice(0, 200) }}</p>
+      <h3 class="heading">{{ post.title.slice(0, 40) }}</h3>
+      <v-divider class="ma-1"></v-divider>
+      <p>{{ post.description.slice(0, 200) }} ...</p>
 
       <nuxt-link :to="post.dir">Read more</nuxt-link>
     </div>
   </div>
 </template>
-
-<script lang="js">
+<script>
 export default {
   props: {
     post: {
@@ -26,16 +26,18 @@ export default {
 .post {
   border-radius: 8px;
   box-shadow: 1px 1px 10px 0 rgba(32, 33, 36, 0.1);
-  padding: 15px 20px;
+  padding: 0px 0px;
   margin: 10px 0;
   display: flex;
+  flex-direction: column;
 }
 .img {
-  width: 200px;
+  width: 100%;
   min-width: 200px;
   margin-right: 10px;
   padding: 0;
   position: relative;
+  height: 300px;
 }
 .img /deep/ img {
   position: absolute;
@@ -46,10 +48,7 @@ export default {
 .heading {
   margin-bottom: 5px;
 }
-.truncate {
-  max-width: 1px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.content {
+  padding: 10px 8px;
 }
 </style>
