@@ -12,11 +12,16 @@
         <nuxt class="ma-0 pa-0" />
       </v-container>
     </v-main>
+    <v-footer-component></v-footer-component>
   </v-app>
 </template>
 
 <script>
+import FooterComponent from "@/components/global/Footer";
 export default {
+  components: {
+    VFooterComponent: FooterComponent,
+  },
   data() {
     return {
       clipped: false,
