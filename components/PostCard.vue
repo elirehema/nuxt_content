@@ -1,10 +1,11 @@
 <template>
   <div class="post">
     <v-img :src="post.image" class="img" alt="Cat"></v-img>
-    <div>
-      <h3 class="heading">{{ post.title }}</h3>
-      <p>{{ post.description }}</p>
+    <div class="content">
       <v-tags :tags="post.tags" />
+      <h3 class="heading">{{ post.title }}</h3>
+      <p>{{ post.description.slice(0, 200) }}</p>
+
       <nuxt-link :to="post.dir">Read more</nuxt-link>
     </div>
   </div>
@@ -44,5 +45,11 @@ export default {
 }
 .heading {
   margin-bottom: 5px;
+}
+.truncate {
+  max-width: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

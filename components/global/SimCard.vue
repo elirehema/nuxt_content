@@ -4,7 +4,7 @@
     <div class="content">
       <v-tags :tags="post.tags" />
       <h3 class="heading">{{ post.title }}</h3>
-      <p>{{ post.description }}</p>
+      <p>{{ post.description.slice(0, 200) }}</p>
 
       <nuxt-link :to="post.dir">Read more</nuxt-link>
     </div>
