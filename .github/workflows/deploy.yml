@@ -1,0 +1,44 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  # pull_request:
+  #  branches: [opened, labeled, master]
+  # issues:
+  #  types: [opened, labeled]
+  #pull_request:
+  # types: [opened, labeled]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+  MY_GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm cache verify
+      - run: rm -rf node_modules package-lock.json 
+      - run: npm i --save
+      - run: npm run production
+      - run: npm test
+      - name: Deploy to gihub pages 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: dist # The folder the action should deploy.
