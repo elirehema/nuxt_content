@@ -14,7 +14,7 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^1.15.0",
     "@nuxt/typescript-runtime": "^2.1.0",
     "autoprefixer": "^9.8.6",
     "nuxt": "^2.15.4",
