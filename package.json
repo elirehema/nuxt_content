@@ -16,7 +16,7 @@
   "dependencies": {
     "@nuxt/content": "^1.15.1",
     "@nuxt/typescript-runtime": "^2.1.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^9.8.8",
     "nuxt": "^2.15.8",
     "prismjs": "^1.23.0"
   },
